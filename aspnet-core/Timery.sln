@@ -1,0 +1,29 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timery.Web", "Timery.Web\Timery.Web.csproj", "{744D1F6E-7E52-4835-84E7-D17E23C47038}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timery.EntityFrameworkCore", "Timery.EntityFrameworkCore\Timery.EntityFrameworkCore.csproj", "{9B1BBC0C-A7E3-475E-A84E-007ACDB95D1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timery.Core", "Timery.Core\Timery.Core.csproj", "{30079B41-6C52-4DAC-AFE7-0B554B299851}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{744D1F6E-7E52-4835-84E7-D17E23C47038}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{744D1F6E-7E52-4835-84E7-D17E23C47038}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{744D1F6E-7E52-4835-84E7-D17E23C47038}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{744D1F6E-7E52-4835-84E7-D17E23C47038}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B1BBC0C-A7E3-475E-A84E-007ACDB95D1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B1BBC0C-A7E3-475E-A84E-007ACDB95D1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B1BBC0C-A7E3-475E-A84E-007ACDB95D1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B1BBC0C-A7E3-475E-A84E-007ACDB95D1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30079B41-6C52-4DAC-AFE7-0B554B299851}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30079B41-6C52-4DAC-AFE7-0B554B299851}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30079B41-6C52-4DAC-AFE7-0B554B299851}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30079B41-6C52-4DAC-AFE7-0B554B299851}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
