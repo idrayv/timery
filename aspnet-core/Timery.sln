@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timery.EntityFrameworkCore"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timery.Core", "Timery.Core\Timery.Core.csproj", "{30079B41-6C52-4DAC-AFE7-0B554B299851}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timery.Application", "Timery.Application\Timery.Application.csproj", "{3D26EF3B-C7E1-41E8-A62A-BD0204F8EDEE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,5 +27,9 @@ Global
 		{30079B41-6C52-4DAC-AFE7-0B554B299851}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30079B41-6C52-4DAC-AFE7-0B554B299851}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30079B41-6C52-4DAC-AFE7-0B554B299851}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D26EF3B-C7E1-41E8-A62A-BD0204F8EDEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D26EF3B-C7E1-41E8-A62A-BD0204F8EDEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D26EF3B-C7E1-41E8-A62A-BD0204F8EDEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D26EF3B-C7E1-41E8-A62A-BD0204F8EDEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
