@@ -1,7 +1,7 @@
 ﻿namespace Timery.Core.Entities
 {
-    public class Entity<T>
+    public class Entity<TKey>
     {
-        public T Id { get; set; }
+        public TKey Id { get; set; }
     }
 }

@@ -11,4 +11,11 @@
     <ProjectReference Include="..\Timery.EntityFrameworkCore\Timery.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\Timery.Core\Timery.Core.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Types\" />
+    <Folder Include="Types\Categories\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="GraphQL" Version="2.4.0" />
+  </ItemGroup>
 </Project>

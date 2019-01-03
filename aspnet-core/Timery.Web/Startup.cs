@@ -1,21 +1,32 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.DependencyInjection;
+using GraphQL;
 using GraphiQl;
-using Timery.Application;
+using GraphQL.Types;
+using Timery.Application.GraphQL;
+using Timery.Web.GraphQL;
+using Timery.Web.GraphQL.Types.Categories;
 
 namespace Timery.Web
 {
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            services.AddSingleton<IDocumentExecuter, DocumentExecuter>();
+            services.AddSingleton<TimeryQuery>();
+            services.AddSingleton<TimeryMutation>();
+
+            services.AddSingleton<CategoryType>();
+            services.AddSingleton<CategoryInputType>();
+
+            var provider = services.BuildServiceProvider();
+            services.AddSingleton<ISchema>(new TimerySchema(new FuncDependencyResolver(type => provider.GetService(type))));
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
@@ -25,9 +36,6 @@ namespace Timery.Web
 
             app.UseGraphiQl();
             app.UseMvc();
-
-            var test = new TestToDelete();
-            test.Test();
         }
     }
 }
