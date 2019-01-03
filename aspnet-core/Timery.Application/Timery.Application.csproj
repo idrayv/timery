@@ -12,10 +12,10 @@
     <ProjectReference Include="..\Timery.Core\Timery.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Types\" />
-    <Folder Include="Types\Categories\" />
+    <PackageReference Include="GraphQL" Version="2.4.0" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="GraphQL" Version="2.4.0" />
+    <Folder Include="Types\" />
+    <Folder Include="GraphQL\" />
   </ItemGroup>
 </Project>

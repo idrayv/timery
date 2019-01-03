@@ -1,6 +1,5 @@
 ﻿using GraphQL;
 using GraphQL.Types;
-using Timery.Web.GraphQL;
 
 namespace Timery.Application.GraphQL
 {

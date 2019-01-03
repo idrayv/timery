@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 
-namespace Timery.Web.GraphQL
+namespace Timery.Application.GraphQL
 {
     public class GraphQLQuery
     {

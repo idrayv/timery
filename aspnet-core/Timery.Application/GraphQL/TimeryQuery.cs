@@ -1,9 +1,9 @@
 ﻿using System.Linq;
 using GraphQL.Types;
+using Timery.Application.Types.Categories;
 using Timery.EntityFrameworkCore;
-using Timery.Web.GraphQL.Types.Categories;
 
-namespace Timery.Web.GraphQL
+namespace Timery.Application.GraphQL
 {
     public class TimeryQuery : ObjectGraphType
     {

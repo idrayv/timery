@@ -1,9 +1,9 @@
 ﻿using GraphQL.Types;
 using Timery.Core.Entities;
 using Timery.EntityFrameworkCore;
-using Timery.Web.GraphQL.Types.Categories;
+using Timery.Application.Types.Categories;
 
-namespace Timery.Web.GraphQL
+namespace Timery.Application.GraphQL
 {
     public class TimeryMutation : ObjectGraphType
     {

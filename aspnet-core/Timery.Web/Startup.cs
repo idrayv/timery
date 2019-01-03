@@ -5,8 +5,7 @@ using GraphQL;
 using GraphiQl;
 using GraphQL.Types;
 using Timery.Application.GraphQL;
-using Timery.Web.GraphQL;
-using Timery.Web.GraphQL.Types.Categories;
+using Timery.Application.Types.Categories;
 
 namespace Timery.Web
 {
@@ -24,7 +23,7 @@ namespace Timery.Web
             services.AddSingleton<CategoryInputType>();
 
             var provider = services.BuildServiceProvider();
-            services.AddSingleton<ISchema>(new TimerySchema(new FuncDependencyResolver(type => provider.GetService(type))));
+            services.AddSingleton<ISchema>(new TimerySchema(new FuncDependencyResolver(provider.GetService)));
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

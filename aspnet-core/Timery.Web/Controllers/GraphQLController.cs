@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using GraphQL;
 using GraphQL.Types;
-using Timery.Web.GraphQL;
+using Timery.Application.GraphQL;
 
 namespace Timery.Web.Controllers
 {
