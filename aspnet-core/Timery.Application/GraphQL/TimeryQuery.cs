@@ -1,32 +1,22 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
 using GraphQL.Types;
-using Timery.Application.Types.Categories;
-using Timery.EntityFrameworkCore;
 
 namespace Timery.Application.GraphQL
 {
     public class TimeryQuery : ObjectGraphType
     {
-        public TimeryQuery()
+        public TimeryQuery(IEnumerable<IGraphQueryMarker> graphQueryMarkers)
         {
-            // TODO: inject manager or repository
-            var db = new TimeryDbContext();
+            Name = "TimeryQuery";
 
-            Field<CategoryType>(
-                "category",
-                arguments: new QueryArguments(new QueryArgument<IntGraphType> { Name = "id" }),
-                resolve: (context) =>
+            foreach (var marker in graphQueryMarkers)
+            {
+                var q = marker as ObjectGraphType;
+                foreach (var f in q.Fields)
                 {
-                    var id = context.GetArgument<int>("id");
-                    var data = db.Categories.Where(c => c.Id == id).FirstOrDefault();
-                    return data;
+                    AddField(f);
                 }
-            );
-
-            Field<ListGraphType<CategoryType>>(
-                "categories",
-                resolve: context => db.Categories.ToList()
-            );
+            }
         }
     }
 }

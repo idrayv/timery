@@ -1,7 +1,7 @@
 ﻿using GraphQL.Types;
 using Timery.Core.Entities;
 
-namespace Timery.Application.Types.Categories
+namespace Timery.Application.Categories.Types
 {
     public class CategoryType : ObjectGraphType<Category>
     {

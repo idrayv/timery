@@ -1,15 +1,15 @@
 ﻿using GraphQL.Types;
 using Timery.Core.Entities;
 using Timery.EntityFrameworkCore;
-using Timery.Application.Types.Categories;
+using Timery.Application.Categories.Types;
 
-namespace Timery.Application.GraphQL
+namespace Timery.Application.Categories
 {
-    public class TimeryMutation : ObjectGraphType
+    public class CategoryMutation : ObjectGraphType
     {
-        public TimeryMutation()
+        public CategoryMutation()
         {
-            Name = "TimeryMutation";
+            Name = "CategoryMutation";
 
             Field<CategoryType>(
                 "createCategory",

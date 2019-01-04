@@ -15,7 +15,10 @@
     <PackageReference Include="GraphQL" Version="2.4.0" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Types\" />
     <Folder Include="GraphQL\" />
+    <Folder Include="Categories\" />
+    <Folder Include="Events\" />
+    <Folder Include="Categories\Types\" />
+    <Folder Include="Events\Types\" />
   </ItemGroup>
 </Project>

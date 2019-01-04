@@ -8,7 +8,6 @@ namespace Timery.Application.GraphQL
         public TimerySchema(IDependencyResolver resolver) : base(resolver)
         {
             Query = resolver.Resolve<TimeryQuery>();
-            Mutation = resolver.Resolve<TimeryMutation>();
         }
     }
 }

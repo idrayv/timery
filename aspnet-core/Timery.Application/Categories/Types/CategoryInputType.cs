@@ -1,6 +1,6 @@
 ﻿using GraphQL.Types;
 
-namespace Timery.Application.Types.Categories
+namespace Timery.Application.Categories.Types
 {
     public class CategoryInputType : InputObjectGraphType
     {

@@ -7,6 +7,8 @@ namespace Timery.EntityFrameworkCore
     {
         public DbSet<Category> Categories { get; set; }
 
+        public DbSet<Event> Events { get; set; }
+
         public TimeryDbContext()
         {
             Database.EnsureCreated();
