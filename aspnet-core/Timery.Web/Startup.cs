@@ -18,25 +18,24 @@ namespace Timery.Web
         {
             services.AddMvc();
 
-            services.AddSingleton<IDocumentExecuter, DocumentExecuter>();
+            services.AddScoped<IDocumentExecuter, DocumentExecuter>();
 
-            services.AddSingleton<IGraphQueryMarker, EventQuery>();
-            services.AddSingleton<IGraphQueryMarker, CategoryQuery>();
+            services.AddScoped<IGraphQueryMarker, EventQuery>();
+            services.AddScoped<IGraphQueryMarker, CategoryQuery>();
 
-            services.AddSingleton<TimeryQuery>();
+            services.AddScoped<IGraphMutationMarker, EventMutation>();
+            services.AddScoped<IGraphMutationMarker, CategoryMutation>();
 
-            services.AddSingleton<CategoryQuery>();
-            services.AddSingleton<CategoryMutation>();
-            services.AddSingleton<CategoryType>();
-            services.AddSingleton<CategoryInputType>();
+            services.AddScoped<TimeryQuery>();
+            services.AddScoped<TimeryMutation>();
 
-            services.AddSingleton<EventQuery>();
-            services.AddSingleton<EventMutation>();
-            services.AddSingleton<EventType>();
-            services.AddSingleton<EventInputType>();
+            services.AddTransient<CategoryType>();
+            services.AddTransient<CategoryInputType>();
+            services.AddTransient<EventType>();
+            services.AddTransient<EventInputType>();
 
             var provider = services.BuildServiceProvider();
-            services.AddSingleton<ISchema>(new TimerySchema(new FuncDependencyResolver(provider.GetService)));
+            services.AddScoped<ISchema>(_ => new TimerySchema(new FuncDependencyResolver(provider.GetService)));
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

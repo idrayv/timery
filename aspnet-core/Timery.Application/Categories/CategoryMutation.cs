@@ -1,11 +1,12 @@
 ﻿using GraphQL.Types;
 using Timery.Core.Entities;
 using Timery.EntityFrameworkCore;
+using Timery.Application.GraphQL;
 using Timery.Application.Categories.Types;
 
 namespace Timery.Application.Categories
 {
-    public class CategoryMutation : ObjectGraphType
+    public class CategoryMutation : ObjectGraphType, IGraphMutationMarker
     {
         public CategoryMutation()
         {
