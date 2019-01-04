@@ -9,7 +9,7 @@ namespace Timery.Application.GraphQL
     {
         public TimeryMutation()
         {
-            Name = "CreateCategoryMutation";
+            Name = "TimeryMutation";
 
             Field<CategoryType>(
                 "createCategory",
