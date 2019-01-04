@@ -19,11 +19,15 @@ namespace Timery.Application.GraphQL
                 resolve: context =>
                 {
                     // TODO: inject manager or repository
+                    // TODO: check how to async
                     var db = new TimeryDbContext();
 
                     var category = context.GetArgument<Category>("category");
 
-                    return db.Categories.AddAsync(category);
+                    db.Categories.Add(category);
+                    db.SaveChanges();
+
+                    return category;
                 }
             );
         }
