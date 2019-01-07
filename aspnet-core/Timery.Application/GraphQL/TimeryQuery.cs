@@ -9,7 +9,7 @@ namespace Timery.Application.GraphQL
         {
             Name = "TimeryQuery";
 
-            foreach (var marker in graphQueryMarkers)
+            foreach (IGraphQueryMarker marker in graphQueryMarkers)
             {
                 var q = marker as ObjectGraphType;
                 foreach (var f in q.Fields)

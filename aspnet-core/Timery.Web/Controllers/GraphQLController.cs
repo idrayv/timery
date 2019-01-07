@@ -7,6 +7,7 @@ using Timery.Application.GraphQL;
 
 namespace Timery.Web.Controllers
 {
+    // TODO: Implement Identity
     [Route("[controller]")]
     public class GraphQLController : Controller
     {

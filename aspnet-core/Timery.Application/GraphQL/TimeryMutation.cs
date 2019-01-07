@@ -9,7 +9,7 @@ namespace Timery.Application.GraphQL
         {
             Name = "TimeryMutation";
 
-            foreach (var marker in graphMutationMarkers)
+            foreach (IGraphMutationMarker marker in graphMutationMarkers)
             {
                 var q = marker as ObjectGraphType;
                 foreach (var f in q.Fields)

@@ -18,6 +18,7 @@ namespace Timery.Web
         {
             services.AddMvc();
 
+            // TODO: Optimize DI configuring
             services.AddScoped<IDocumentExecuter, DocumentExecuter>();
 
             services.AddScoped<IGraphQueryMarker, EventQuery>();
