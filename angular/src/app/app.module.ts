@@ -6,6 +6,7 @@ import { HttpLink, HttpLinkModule } from 'apollo-angular-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AppBootstrapModule } from './shared/modules/app.bootstrap.module';
 import { EventsComponent } from './events/events.component';
 import { SettingsComponent } from './settings/settings.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
@@ -19,6 +20,7 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
   ],
   imports: [
     BrowserModule,
+    AppBootstrapModule,
     AppRoutingModule,
     HttpClientModule,
     ApolloModule,
