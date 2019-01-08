@@ -33,7 +33,7 @@ export class AppModule {
   constructor(apollo: Apollo, httpLink: HttpLink) {
     apollo.create({
       // TODO: take uri from environment settings
-      link: httpLink.create({uri: 'https://localhost:5001/graphql'}),
+      link: httpLink.create({ uri: 'https://localhost:5001/graphql' }),
       cache: new InMemoryCache()
     });
   }
