@@ -9,6 +9,8 @@ using Timery.Application.Events;
 using Timery.Application.Categories.Types;
 using Timery.Application.Events.Types;
 using Timery.Application.GraphQL;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Cors.Internal;
 
 namespace Timery.Web
 {
@@ -16,7 +18,13 @@ namespace Timery.Web
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            // TODO: Take from appconfig.json settings
+            services.AddCors(o => o.AddPolicy("TimeryCorsPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
 
             // TODO: Optimize DI configuring
             services.AddScoped<IDocumentExecuter, DocumentExecuter>();
@@ -37,6 +45,12 @@ namespace Timery.Web
 
             var provider = services.BuildServiceProvider();
             services.AddScoped<ISchema>(_ => new TimerySchema(new FuncDependencyResolver(provider.GetService)));
+
+            services.AddMvc();
+            services.Configure<MvcOptions>(options =>
+            {
+                options.Filters.Add(new CorsAuthorizationFilterFactory("TimeryCorsPolicy"));
+            });
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -48,6 +62,8 @@ namespace Timery.Web
 
             app.UseGraphiQl();
             app.UseMvc();
+
+            app.UseCors("TimeryCorsPolicy");
         }
     }
 }

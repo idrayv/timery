@@ -1,3 +1,10 @@
 <p>
   events works!
 </p>
+
+<ul>
+  <li *ngFor="let event of events | async">
+    Event #{{event.id}}
+    by category: {{event.category.name}}
+  </li>
+</ul>
