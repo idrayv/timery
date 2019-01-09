@@ -9,6 +9,7 @@ namespace Timery.Application.Categories.Types
         {
             Field(x => x.Id);
             Field(x => x.Name);
+            Field(x => x.CanContainDuration);
         }
     }
 }

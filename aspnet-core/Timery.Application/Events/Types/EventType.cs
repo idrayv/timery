@@ -12,6 +12,14 @@ namespace Timery.Application.Events.Types
         {
             Field(x => x.Id);
 
+            Field(x => x.Date);
+
+            Field(x => x.DurationInMinutes);
+
+            Field(x => x.StartTime);
+
+            Field(x => x.DueTime);
+
             Field<CategoryType>(
                 "category",
                 resolve: context =>
