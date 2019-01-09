@@ -9,6 +9,7 @@ namespace Timery.Application.Categories.Types
             Name = "CategoryInput";
             Field<NonNullGraphType<StringGraphType>>("name");
             Field<NonNullGraphType<BooleanGraphType>>("canContainDuration");
+            Field<NonNullGraphType<BooleanGraphType>>("canContainComment");
         }
     }
 }

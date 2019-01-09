@@ -12,6 +12,7 @@ namespace Timery.Application.Events.Types
             Field<IntGraphType>("durationInMinutes");
             Field<TimeSpanSecondsGraphType>("startTime");
             Field<TimeSpanSecondsGraphType>("dueTime");
+            Field<StringGraphType>("comment");
         }
     }
 }

@@ -20,6 +20,8 @@ namespace Timery.Application.Events.Types
 
             Field(x => x.DueTime);
 
+            Field(x => x.Comment, nullable: true);
+
             Field<CategoryType>(
                 "category",
                 resolve: context =>
