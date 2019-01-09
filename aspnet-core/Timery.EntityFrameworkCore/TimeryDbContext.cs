@@ -9,6 +9,8 @@ namespace Timery.EntityFrameworkCore
 
         public DbSet<Event> Events { get; set; }
 
+        public DbSet<DailyNote> DailyNotes { get; set; }
+
         public TimeryDbContext()
         {
             Database.EnsureCreated();
