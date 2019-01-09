@@ -4,6 +4,13 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Production' ">
+    <StartAction>Project</StartAction>
+    <EnvironmentVariables>
+      <Variable name="ASPNETCORE_ENVIRONMENT" value="Production" />
+    </EnvironmentVariables>
+    <ApplicationURL>https://localhost:5001</ApplicationURL>
+  </PropertyGroup>
   <ItemGroup>
     <Folder Include="wwwroot\" />
     <Folder Include="Controllers\" />

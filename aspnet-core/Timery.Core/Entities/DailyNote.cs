@@ -1,11 +1,9 @@
-﻿using System;
+using System;
 
 namespace Timery.Core.Entities
 {
-    public class Event : Entity<long>
+    public class DailyNote : Entity<long>
     {
-        public int CategoryId { get; set; }
-        public Category Category { get; set; }
         public DateTime Date { get; set; }
         public int DurationInMinutes { get; set; }
         public TimeSpan StartTime { get; set; }

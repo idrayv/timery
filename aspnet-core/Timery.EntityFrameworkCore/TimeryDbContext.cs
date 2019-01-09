@@ -1,13 +1,16 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Timery.Core.Entities;
 
 namespace Timery.EntityFrameworkCore
 {
-    public class TimeryDbContext : DbContext
+    public class TimeryDbContext : IdentityDbContext
     {
         public DbSet<Category> Categories { get; set; }
 
         public DbSet<Event> Events { get; set; }
+
+        public DbSet<DailyNote> DailyNotes { get; set; }
 
         public TimeryDbContext()
         {
