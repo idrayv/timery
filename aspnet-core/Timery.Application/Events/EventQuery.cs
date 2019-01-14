@@ -8,25 +8,22 @@ namespace Timery.Application.Events
 {
     public class EventQuery : ObjectGraphType, IGraphQueryMarker
     {
-        public EventQuery()
+        public EventQuery(TimeryDbContext dbContext)
         {
-            // TODO: inject manager or repository
-            var db = new TimeryDbContext();
-
             Field<EventType>(
                 "event",
                 arguments: new QueryArguments(new QueryArgument<IntGraphType> { Name = "id" }),
                 resolve: (context) =>
                 {
                     var id = context.GetArgument<int>("id");
-                    var data = db.Events.Where(c => c.Id == id).FirstOrDefault();
+                    var data = dbContext.Events.Where(c => c.Id == id).FirstOrDefault();
                     return data;
                 }
             );
 
             Field<ListGraphType<EventType>>(
                 "events",
-                resolve: context => db.Events.ToList()
+                resolve: context => dbContext.Events.ToList()
             );
         }
     }

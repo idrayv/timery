@@ -12,6 +12,8 @@ using Timery.Application.Events;
 using Timery.Application.Categories.Types;
 using Timery.Application.Events.Types;
 using Timery.Application.GraphQL;
+using Timery.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace Timery.Web
 {
@@ -38,6 +40,9 @@ namespace Timery.Web
                        .AllowAnyMethod()
                        .AllowAnyHeader();
             }));
+
+            var connectionString = Configuration.GetValue<string>("ConnectionStrings:Default");
+            services.AddDbContext<TimeryDbContext>(options => options.UseMySql(connectionString));
 
             // TODO: Optimize DI configuring
             services.AddScoped<IDocumentExecuter, DocumentExecuter>();

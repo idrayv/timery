@@ -8,7 +8,7 @@ namespace Timery.Application.Events
 {
     public class EventMutation : ObjectGraphType, IGraphMutationMarker
     {
-        public EventMutation()
+        public EventMutation(TimeryDbContext dbContext)
         {
             Name = "EventMutation";
 
@@ -19,14 +19,10 @@ namespace Timery.Application.Events
                 ),
                 resolve: context =>
                 {
-                    // TODO: inject manager or repository
-                    // TODO: check how to async
-                    var db = new TimeryDbContext();
-
                     var userEvent = context.GetArgument<Event>("event");
 
-                    db.Events.Add(userEvent);
-                    db.SaveChanges();
+                    dbContext.Events.Add(userEvent);
+                    dbContext.SaveChanges();
 
                     return userEvent;
                 }

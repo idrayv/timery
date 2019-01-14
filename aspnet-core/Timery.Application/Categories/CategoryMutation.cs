@@ -8,7 +8,7 @@ namespace Timery.Application.Categories
 {
     public class CategoryMutation : ObjectGraphType, IGraphMutationMarker
     {
-        public CategoryMutation()
+        public CategoryMutation(TimeryDbContext dbContext)
         {
             Name = "CategoryMutation";
 
@@ -19,14 +19,10 @@ namespace Timery.Application.Categories
                 ),
                 resolve: context =>
                 {
-                    // TODO: inject manager or repository
-                    // TODO: check how to async
-                    var db = new TimeryDbContext();
-
                     var category = context.GetArgument<Category>("category");
 
-                    db.Categories.Add(category);
-                    db.SaveChanges();
+                    dbContext.Categories.Add(category);
+                    dbContext.SaveChanges();
 
                     return category;
                 }

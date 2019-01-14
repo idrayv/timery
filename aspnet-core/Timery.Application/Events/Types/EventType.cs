@@ -8,7 +8,7 @@ namespace Timery.Application.Events.Types
 {
     public class EventType : ObjectGraphType<Event>
     {
-        public EventType()
+        public EventType(TimeryDbContext dbContext)
         {
             Field(x => x.Id);
 
@@ -28,9 +28,7 @@ namespace Timery.Application.Events.Types
                 {
                     var categoryId = context.Source.CategoryId;
 
-                    // TODO: inject manager or repository
-                    var db = new TimeryDbContext();
-                    var category = db.Categories.Where(c => c.Id == categoryId).FirstOrDefault();
+                    var category = dbContext.Categories.Where(c => c.Id == categoryId).FirstOrDefault();
 
                     return category;
                 }
