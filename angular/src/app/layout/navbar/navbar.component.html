@@ -16,4 +16,7 @@
       </li>
     </ul>
   </div>
+  <div>
+    <span *ngIf="(sessionState$ | async)?.isLoggedIn">Hello #username</span>
+  </div>
 </nav>
